@@ -12,12 +12,12 @@ contributions:
     - Sch-Da
 ---
 
-Imagine you have a very long text that you want to process with a large language model (LLM). You might want to summarize it, extract information, or translate it into another language. However, LLMs have limits on how much text they can process in a single request in a so-called context window. If your text exceeds those limits, you need a way to split it into smaller chunks that the model can handle.
+Imagine you have a very long text that you want to process with a large language model (LLM). You might want to summarize it, extract information, or translate it into another language. However, LLMs have limits on how much text they can process in a single request in a so-called context window. If your text exceeds those limits, you need a way to split it into smaller pieces (chunks) that the model can handle.
 
 ### Divide and Conquer: LangChain Text Splitter to the rescue
 
 LangChain is a popular open-source framework for building LLM-powered applications. It provides a set of utilities
-wrapped in standalone python packages. One of these is [LangChain Text Splitters](https://github.com/langchain-ai/langchain/tree/master/libs/text-splitters), which provides different strategies for dividing long texts into smaller pieces (=chunks) as shown below:
+wrapped in standalone python packages. One of these is [LangChain Text Splitters](https://github.com/langchain-ai/langchain/tree/master/libs/text-splitters), which provides different strategies for chunking as shown below:
 
 <div id="split-modes-visual">
   <style>
