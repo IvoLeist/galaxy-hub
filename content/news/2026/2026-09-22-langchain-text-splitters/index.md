@@ -1,5 +1,5 @@
 ---
-title: 'LangChain Text Splitters, the missing link when processing long texts with LLMs'
+title: 'LangChain Text Splitters, the Missing Link when Processing Long Texts with LLMs'
 date: '2026-09-22'
 tease: "Circumvent context window limits of LLMs by splitting long texts into manageable chunks."
 hide_tease: false
@@ -8,15 +8,15 @@ tags: [tools, ai, humanities, llm]
 contributions:
   authorship:
     - IvoLeist
-    - Sch-Da
     - arash77
+    - Sch-Da
   funding:
     - ai4social
 ---
 
 Imagine you have a very long text that you want to process with a large language model (LLM). You might want to summarize it, extract information, or translate it into another language. However, LLMs have limits on how much text they can process in a single request in a so-called context window. If your text exceeds those limits, you need a way to split it into smaller pieces (chunks) that the model can handle.
 
-### Divide and Conquer: LangChain Text Splitter to the rescue
+## Divide and Conquer:<br>LangChain Text Splitters to the Rescue
 
 LangChain is a popular open-source framework for building LLM-powered applications. It provides a set of utilities
 wrapped in standalone Python packages. One of these is [LangChain Text Splitters](https://github.com/langchain-ai/langchain/tree/master/libs/text-splitters), which provides different strategies for chunking as shown below:
@@ -248,25 +248,23 @@ As you can see, there is no splitting strategy which is universally better than 
 to choose the one that fits your text and downstream application the best. Also note the toggle for chunk
 overlap which can be useful for tasks such as translation, summarization, or retrieval-augmented generation (RAG).
 
-### LangChain Text Splitters in Galaxy
+## LangChain Text Splitters in Galaxy
 
 Insert GIF
 
-### A Galaxy (workflow) example: translating long video transcripts
+## A Galaxy Workflow Example:<br>Transcribing & Translating long Video Transcripts
 
-Here there is a little bit more story missing referencing 
-the context window exceeding for long video transcripts and the need to split them into chunks for translation.
+Like our users, we enjoy exploring the capabilities of various open-source LLMs available through the
+[LLM Hub](https://usegalaxy.eu/?tool_id=llm_hub) ([Blogpost](https://galaxyproject.org/news/2025-10-10-llm-hub)).
+While experimenting with the LLM Hub as an alternative to the [ChatGPT Galaxy tool](https://usegalaxy.eu/?tool_id=chatgpt_openai_api) in our [transcription & translation Galaxy workflow](https://usegalaxy.eu/published/workflow?id=a2284469005518e1), we faced a practical limitation: Translating long video transcripts results in truncated outputs or even timeouts!
 
-Here we present a Galaxy workflow that
+Thanks to the [LangChain Text Splitters Galaxy tool](https://usegalaxy.eu/?tool_id=langchain_text_splitters) this now a problem of the past. See below how we feed manageable chunks to the LLM, which are then translated and concatenated into a single document:
 
-Insert workflow embedding as for example here:
-https://galaxyproject.org/news/2024-09-02-chat-gpt/
+<iframe title="Galaxy Workflow Embed" style="width: 100%; height: 400px; border: none;" src="https://usegalaxy.eu/published/workflow?id=0b5ab1b58eee9228&embed=true&buttons=true&about=false&heading=false&minimap=false&zoom_controls=false&initialX=-20&initialY=-20&zoom=1"></iframe>
 
-Explanations below
-
-1. Transcribes long training videos with [WhisperX](https://galaxyproject.org/tools/whisperx/)
-2. Splits the transcripts into chunks with [LangChain Text Splitters](https://galaxyproject.org/tools/langchain-text-splitters/)
-3. Translates each chunk with [LLM Hub](https://galaxyproject.org/tools/llm-hub/)
-4. Joins the translations into one document with [Concatenate](https://galaxyproject.org/tools/concatenate/).
-
-
+#| Step                    |  Description |
+-|-------------------------|--------------|
+1| Speech to text |  [WhisperX](https://usegalaxy.eu/?tool_id=whisperx) transcribes the audio or video into subtitles (SRT): numbered cues with timestamps, so the translation can be used as subtitles again.  |
+2| Split into chunks |  SRT is cut into chunks at paragraph boundaries using the recursive Text Splitter from [LangChain Text Splitters](https://usegalaxy.eu/?tool_id=langchain_text_splitters).
+3| One LLM request per chunk |Every chunk goes to [LLM Hub](https://usegalaxy.eu/?tool_id=llm_hub) on its own, with the same prompt.
+4| Join the answers | [awk](https://usegalaxy.eu/?tool_id=awk) ends each answer with exactly one blank line, so subtitle blocks don't stick together. [Concatenate](https://usegalaxy.eu/?tool_id=tp_cat) joins all answers in the original order into the final file.
