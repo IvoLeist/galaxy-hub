@@ -8,8 +8,10 @@ tags: [tools, ai, humanities, llm]
 contributions:
   authorship:
     - IvoLeist
-    - arash77
     - Sch-Da
+    - arash77
+  funding:
+    - ai4social
 ---
 
 Imagine you have a very long text that you want to process with a large language model (LLM). You might want to summarize it, extract information, or translate it into another language. However, LLMs have limits on how much text they can process in a single request in a so-called context window. If your text exceeds those limits, you need a way to split it into smaller pieces (chunks) that the model can handle.
@@ -17,7 +19,7 @@ Imagine you have a very long text that you want to process with a large language
 ### Divide and Conquer: LangChain Text Splitter to the rescue
 
 LangChain is a popular open-source framework for building LLM-powered applications. It provides a set of utilities
-wrapped in standalone python packages. One of these is [LangChain Text Splitters](https://github.com/langchain-ai/langchain/tree/master/libs/text-splitters), which provides different strategies for chunking as shown below:
+wrapped in standalone Python packages. One of these is [LangChain Text Splitters](https://github.com/langchain-ai/langchain/tree/master/libs/text-splitters), which provides different strategies for chunking as shown below:
 
 <div id="split-modes-visual">
   <style>
@@ -243,7 +245,7 @@ wrapped in standalone python packages. One of these is [LangChain Text Splitters
 </script>
 
 As you can see, there is no splitting strategy which is universally better than the others, but you have
-to choose the one that fits your text and downstream application the best. Also note the toggle for chunk 
+to choose the one that fits your text and downstream application the best. Also note the toggle for chunk
 overlap which can be useful for tasks such as translation, summarization, or retrieval-augmented generation (RAG).
 
 ### LangChain Text Splitters in Galaxy
@@ -252,14 +254,19 @@ Insert GIF
 
 ### A Galaxy (workflow) example: translating long video transcripts
 
+Here there is a little bit more story missing referencing 
+the context window exceeding for long video transcripts and the need to split them into chunks for translation.
+
 Here we present a Galaxy workflow that
 
+Insert workflow embedding as for example here:
+https://galaxyproject.org/news/2024-09-02-chat-gpt/
+
+Explanations below
+
 1. Transcribes long training videos with [WhisperX](https://galaxyproject.org/tools/whisperx/)
-2.  Splits the transcripts into chunks with [LangChain Text Splitters](https://galaxyproject.org/tools/langchain-text-splitters/)
+2. Splits the transcripts into chunks with [LangChain Text Splitters](https://galaxyproject.org/tools/langchain-text-splitters/)
 3. Translates each chunk with [LLM Hub](https://galaxyproject.org/tools/llm-hub/)
 4. Joins the translations into one document with [Concatenate](https://galaxyproject.org/tools/concatenate/).
 
 
-Insert workflow embedding as for example here:
-
-https://galaxyproject.org/news/2024-09-02-chat-gpt/
