@@ -1,5 +1,6 @@
 ---
 title: "Building the Digital Humanities and Social Sciences Community - with Montreal Forced Aligner and New-Fave"
+components: true
 date: "2026-10-01"
 tease: "Montreal Forced Aligner and New Fave are important tools in linguistics. Adding them to Galaxy shows the widening of the Digital Humanities and Social Sciences Community in Galaxy."
 subsites: [global,eu,freiburg]
@@ -67,11 +68,15 @@ But her regular analysis still included [Praat](https://praat.org/), an interact
 <MermaidEmbed>
 ```mermaid
 flowchart LR
-    A[Audio recording + Transcription] --> B[MFA Word- and phone-level alignment]
-    B[MFA Word- and phone-level alignment] --> C[TextGrid files Word and phone boundaries]
-    C[TextGrid files Word and phone boundaries] --> D[Praat Inspect and manually correct alignments]
-    D[Praat Inspect and manually correct alignments] --> E[new-fave Vowel formant extraction]
-    E[new-fave Vowel formant extraction] --> F[Vowel formant data]
+    A[Audio recording + Transcription] 
+    B[TextGrid files Word and phone boundaries]
+    C[Corrected TextGrid files + original audio recording]
+    D[Vowel formant data]
+
+    A -->|MFA: Word- and phone-level alignment| B
+    B -->|Praat: Inspect and manually correct alignments| C
+    C -->|New-Fave: Vowel formant extraction| D
+
 ```
 </MermaidEmbed>
 
