@@ -51,9 +51,42 @@ Jessica tested extensively to identify where the tools needed improvements and w
 For this, Jessica's domain knowledge, insights and enthusiasm were essential.
 Once the tools were good to go, [Ivo Leist](https://github.com/IvoLeist/) ported them from the test status into Galaxy Toolshed-ready tools.
 (If you want to read more on the technical process, stay tuned for Jessica's second step of the journey!)
-Thanks to all of them, you can run [Montreal Forced Aligner](https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fmfa_align%2Fmfa_align%2F3.4.2%2B0&version=latest) and [new-fave](https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/new_fave_extract/new_fave_extract/1.3.0+galaxy0) directly on Galaxy.
+Thanks to all of them, you can run new-fave and Montreal Forced Aligner directly on Galaxy. Click the buttons below to give them a try.
 
-<a href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fmfa_align%2Fmfa_align%2F3.4.2%2B0&version=latest"><button type="button" class="btn btn-success">Click to test MFA Align on Galaxy Europe!</button></a>
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:0.75rem;">
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/new_fave_extract/new_fave_extract" target="_blank" rel="noopener noreferrer">new-fave</a>
+</div>
+
+<h3>Montreal Forced Aligner tool suite:</h3>
+
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:0.75rem;">
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_align/mfa_align" target="_blank" rel="noopener noreferrer">Align</a>
+</div>
+
+<h4>Validation</h4>
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:0.75rem;">
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_validate/mfa_validate" target="_blank" rel="noopener noreferrer">Validate</a>
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_validate_dictionary/mfa_validate_dictionary" target="_blank" rel="noopener noreferrer">Validate Dictionary</a>
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_find_oovs/mfa_find_oovs" target="_blank" rel="noopener noreferrer">Find OOVs</a>
+</div>
+
+<h4>Training &amp; Adaptation</h4>
+<div style="display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:0.75rem;">
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_train/mfa_train" target="_blank" rel="noopener noreferrer">Train</a>
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_train_dictionary/mfa_train_dictionary" target="_blank" rel="noopener noreferrer">Train Dictionary</a>
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_train_g2p/mfa_train_g2p" target="_blank" rel="noopener noreferrer">Train G2P</a>
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_train_lm/mfa_train_lm" target="_blank" rel="noopener noreferrer">Train LM</a>
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_train_tokenizer/mfa_train_tokenizer" target="_blank" rel="noopener noreferrer">Train Tokenizer</a>
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_adapt/mfa_adapt" target="_blank" rel="noopener noreferrer">Adapt</a>
+</div>
+
+<h4>Utilities</h4>
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:0.75rem;">
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_g2p/mfa_g2p" target="_blank" rel="noopener noreferrer">G2P</a>
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_tokenize/mfa_tokenize" target="_blank" rel="noopener noreferrer">Tokenize</a>
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_remap_alignments/mfa_remap_alignments" target="_blank" rel="noopener noreferrer">Remap Alignments</a>
+  <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_merge/mfa_merge" target="_blank" rel="noopener noreferrer">Merge</a>
+</div>
 
 ## From Tools to Workflow to Trainings
 Making the tools accessible outside of command-line settings can already be super helpful for many researchers.
