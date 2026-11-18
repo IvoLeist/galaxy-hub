@@ -67,16 +67,54 @@ But her regular analysis still included [Praat](https://praat.org/), an interact
 
 <MermaidEmbed>
 ```mermaid
-flowchart LR
-    A[Audio recording + Transcription] 
-    B[TextGrid files Word and phone boundaries]
-    C[Corrected TextGrid files + original audio recording]
-    D[Vowel formant data]
+flowchart TB
+    %% Workflow
+    subgraph Workflow[" "]
+        direction LR
+        O["Audio recording"]
+        T["Transcription"]
+        M("MFA:<br/>Phone-level alignment")
+        B["TextGrid files:<br/>Word & phone boundaries"]
+        P("Praat:<br/>Inspect & manually correct alignments")
+        C["Corrected TextGrid files"]
+        N("new-fave:<br/>Vowel formant extraction")
+        D["Vowel formant data"]
 
-    A -->|MFA: Word- and phone-level alignment| B
-    B -->|Praat: Inspect and manually correct alignments| C
-    C -->|New-Fave: Vowel formant extraction| D
+        O --> M
+        T --> M
+        M --> B
+        B --> P
+        O --> P
+        P --> C
+        C --> N
+        O --> N
+        N --> D
+    end
 
+    %% Legend
+    subgraph Legend["Legend"]
+        direction LR
+        L1["Input / output data"]
+        L2("<div style='width:220px;text-align:center'>Galaxy tool + Interactive tool<br/>(human in the loop)</div>")
+        L3("Galaxy tool")
+
+        L1 ~~~ L2 ~~~ L3
+    end
+
+    %% Place legend below workflow
+    Workflow ~~~ Legend
+
+    %% Hide workflow subgraph border
+    style Workflow fill:none,stroke:none
+
+    %% Styles
+    classDef tool fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    classDef humanLoop fill:#ffedd5,stroke:#ea580c,stroke-width:2px,stroke-dasharray:5\,3,color:#9a3412
+    classDef data fill:#dcfce7,stroke:#16a34a,stroke-width:1.5px,color:#166534
+
+    class N,L3 tool
+    class M,P,L2 humanLoop
+    class O,T,B,C,D,L1 data
 ```
 </MermaidEmbed>
 
