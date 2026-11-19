@@ -1,7 +1,7 @@
 ---
 title: "Building the Digital Humanities and Social Sciences Community - with Montreal Forced Aligner and New-Fave"
 components: true
-date: "2026-10-01"
+date: "2026-11-19"
 tease: "Montreal Forced Aligner and New Fave are important tools in linguistics. Adding them to Galaxy shows the widening of the Digital Humanities and Social Sciences Community in Galaxy."
 subsites: [global,eu,freiburg]
 main_subsite: freiburg
