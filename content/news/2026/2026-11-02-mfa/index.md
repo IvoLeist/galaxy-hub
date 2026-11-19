@@ -56,7 +56,7 @@ Thanks to all of them, you can run new-fave and Montreal Forced Aligner directly
 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:0.75rem;">
   <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/new_fave_extract/new_fave_extract" target="_blank" rel="noopener noreferrer">new-fave</a>
 </div>
-<br></br>
+<br />
 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:0.75rem;">
   <a class="btn btn-primary" href="https://ssh.usegalaxy.eu/?tool_id=toolshed.g2.bx.psu.edu/repos/bgruening/mfa_align/mfa_align" target="_blank" rel="noopener noreferrer">MFA Align</a>
 </div>
