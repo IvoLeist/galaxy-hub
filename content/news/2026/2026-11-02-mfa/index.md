@@ -130,10 +130,11 @@ flowchart TB
     subgraph Legend["Legend"]
         direction LR
         L1["Input / output data"]
-        L2("<div style='width:220px;text-align:center'>Galaxy tool + Interactive tool<br/>(human in the loop)</div>")
-        L3("Galaxy tool")
+        L2("<div style='width:280px;text-align:center'>Galaxy tools + human-in-the-loop step with an interactive tool</div>")
+        L3("Interactive tool")
+        L4("Galaxy tool")
 
-        L1 ~~~ L2 ~~~ L3
+        L1 ~~~ L2 ~~~ L3 ~~~ L4
     end
 
     %% Place legend below workflow
@@ -145,10 +146,13 @@ flowchart TB
     %% Styles
     classDef tool fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
     classDef humanLoop fill:#ffedd5,stroke:#ea580c,stroke-width:2px,stroke-dasharray:5\,3,color:#9a3412
+    classDef interactive fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#6b21a8
     classDef data fill:#dcfce7,stroke:#16a34a,stroke-width:1.5px,color:#166534
 
-    class N,L3 tool
-    class M,P,L2 humanLoop
+    %% Assign classes
+    class N,L4 tool
+    class M,L2 humanLoop
+    class P,L3 interactive
     class O,T,B,C,D,L1 data
 ```
 </MermaidEmbed>
