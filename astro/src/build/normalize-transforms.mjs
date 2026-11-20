@@ -329,7 +329,7 @@ export const KNOWN_COMPONENTS = [
   'MermaidEmbed',
   'CalendarEmbed',
   'Insert',
-  'LatestFeeds', 
+  'LatestFeeds',
   'CopyButton',
   'EuIntro',
   'ReleaseGuardiansSummary',
